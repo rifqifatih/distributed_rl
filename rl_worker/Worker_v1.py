@@ -24,9 +24,16 @@ try:
     import selectors
 except ImportError:
     import selectors2 as selectors  # run  python -m pip install selectors2
+import argparse
+
+parser = argparse.ArgumentParser(description='Set learner host port.')
+parser.add_argument('--host', default='172.19.0.1', help='Host')
+parser.add_argument('--port', default='65432', help='Port')
+args = parser.parse_args()
+
 sel = selectors.DefaultSelector()
-host = '172.19.0.1'
-port = 65432
+host = args.host
+port = args.port
 
 
 # if gpu is to be used

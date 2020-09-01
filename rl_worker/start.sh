@@ -6,4 +6,4 @@ export PYTHONPATH
 . $HBP/user-scripts/nrp_aliases
 cle-virtual-coach start_experiment.py
 sleep 5
-python Worker_v1.py
+python Worker_v1.py --host $1 --port $2
