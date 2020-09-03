@@ -34,7 +34,8 @@ args = parser.parse_args()
 sel = selectors.DefaultSelector()
 host = args.host
 port = args.port
-
+port = int(args.port)
+print("Starting rl-worker on", host, port)
 
 # if gpu is to be used
 device = torch.device('cuda')

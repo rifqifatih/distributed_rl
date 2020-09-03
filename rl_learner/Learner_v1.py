@@ -27,8 +27,8 @@ args = parser.parse_args()
 
 sel = selectors.DefaultSelector()
 host = args.host
-port = args.port
-
+port = int(args.port)
+print("Starting rl-learner on", host, port)
 
 device = torch.device('cuda')
 
