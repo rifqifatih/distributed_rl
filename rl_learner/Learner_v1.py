@@ -21,7 +21,7 @@ except ImportError:
 import argparse
 
 parser = argparse.ArgumentParser(description='Set learner host port.')
-parser.add_argument('--host', default='172.19.0.1', help='Host')
+parser.add_argument('--host', default=socket.gethostbyname(socket.gethostname()), help='Host')
 parser.add_argument('--port', default=65432, help='Port')
 args = parser.parse_args()
 
