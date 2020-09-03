@@ -15,3 +15,5 @@ COPY test.py /home/ubuntu/rl_learner/
 
 # Only works in Kubernetes
 CMD ["bash", "-c", "python3 Learner_v1.py --host $RL_LEARNER_SERVICE_HOST --port $RL_LEARNER_SERVICE_PORT"]
+
+EXPOSE 30007

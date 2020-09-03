@@ -7,9 +7,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 65432
-    targetPort: 65432
-    nodePort: 30003
+  - port: 30007
+    targetPort: 30007
+    nodePort: 30007
   selector:
     app: rl-learner
 ---
@@ -32,4 +32,4 @@ spec:
           image: rifqifatih/rl_learner
           imagePullPolicy: Always
           ports:
-          - containerPort: 65432
+    - containerPort: 30007
