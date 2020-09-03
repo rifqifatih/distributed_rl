@@ -142,7 +142,7 @@ class Worker():
         self.update_reward()
         experiences = self.replay_memory.memory
         send_exp = map(lambda x: x._asdict(), experiences)
-        serialized_exp = pickle.dumps(send_exp)
+        serialized_exp = pickle.dumps(send_exp, protocol=2)
         request = self.create_request("push", serialized_exp)
 
         self.start_connection(host, port, request)
