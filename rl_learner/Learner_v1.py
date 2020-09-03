@@ -125,7 +125,7 @@ class Learner():
         # socket send parameters back to worker
         # when receive newest parameter request, call this
         # return pickle.dumps(self.agent.state_dict())
-        return pickle.dumps(self.state_dict)
+        return pickle.dumps(self.state_dict, protocol=2)
 
     def receive_exp(self, data):
         encoded_data = pickle.loads(data)
